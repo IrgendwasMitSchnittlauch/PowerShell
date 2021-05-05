@@ -45,8 +45,9 @@ echo "Your Snapshots will take about " ((($ImportedCSV.count * $TimeInSeconds)+1
 #New-TimeSpan Calculation
 $CalculatedSeconds = (($ImportedCSV.count * $TimeInSeconds)+10)
 $ts = New-TimeSpan -seconds $CalculatedSeconds
-echo "You will be ready at "
-(Get-Date)+$ts
+$echomid = echo "You will be ready at "
+$GDTS = (Get-Date)+$ts
+$echomid; $GDTS
 
 #-------
 
