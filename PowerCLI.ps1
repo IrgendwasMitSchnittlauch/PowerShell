@@ -32,7 +32,7 @@ echo $SnapshotName
 #Start with the real Snapshot creation
 foreach ($Server in $ImportedCSV.Server)
 {
-New-Snapshot -Name $SnapshotName; Start-Sleep -Seconds $TimeInSeconds
+New-Snapshot -vm $Server -Name $SnapshotName; Start-Sleep -Seconds $TimeInSeconds
 }
 $Echo1 = "Snapshots named " + $SnapshotName + " have been created"
 echo $Echo1
@@ -40,7 +40,7 @@ echo $Echo1
 #-------
 
 #Here is a small Calculator how long it will take untill all of your Snapshots are finished
-echo "Your Snapshots will take about " (($ImportedCSV.count * $TimeInSeconds)+10) /60 " Minutes"
+echo "Your Snapshots will take about " ((($ImportedCSV.count * $TimeInSeconds)+10) /60) " Minutes"
 
 #New-TimeSpan Calculation
 $CalculatedSeconds = (($ImportedCSV.count * $TimeInSeconds)+10)
