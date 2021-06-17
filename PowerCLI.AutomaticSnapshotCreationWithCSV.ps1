@@ -1,3 +1,5 @@
+#17.06.2021 (c) Schnittlauch Version 1.5
+
 #For this script you need:
 #A CSV file with your servers to snapshot (To access to each colum use fe. $ImportedCsv.ColumXY)
 #The PowerCli Module
