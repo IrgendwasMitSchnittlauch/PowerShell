@@ -1,5 +1,6 @@
 ﻿<#
-28.06.2021 (c) Schnittlauch Version 1.0
+28.06.2021 (c) Schnittlauch Version 1.1
+Thanks to the official MS documentation
 
 For this script you need:
 
