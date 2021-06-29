@@ -8,6 +8,11 @@ For this script you need:
 -The Azure Module
 
 
+NOTE: THERE IS A NEWER SCRIPT WITH LICENSING AND ADDING TO GROUPS AVAILABLE:
+Github/IrgendwasMitSchnittlauch/powershell/Azure.CreateMassUserWithLicense.ps1
+https://github.com/IrgendwasMitSchnittlauch/Powershell/blob/main/Azure.CreateMassUserWithLicense.ps1
+
+
 -----
 
 How to install the Azure PS Module:
