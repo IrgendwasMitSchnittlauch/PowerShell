@@ -2,6 +2,8 @@
 
 Thanks to the official MS documentation
 
+With this Script you can create Azure AD Users with an E-Mail, License them and add them into Group-Mailboxes
+
 For this script you need:
 -A CSV file with the Columns of your DisplayName, UserPrincipalName, Password, MailNickName, Location, LicenseYN (License Yes No), (in my example the group is called:) SupportGruppeYN
 -In best case all Azure Modules
