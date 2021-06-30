@@ -61,7 +61,7 @@ Write-host "for the user" $item.DisplayName "a License was assinged"
 }
 else {write-host "for the user" $item.DisplayName "no License was requested"}
 
-if ($item.SupportGruppeYN -eq "y"){Add-AzADGroupMember -TargetGroupDisplayName $Group -MemberUserPrincipalName "$item.UserPrincipalName";
+if ($item.SupportGruppeYN -eq "y"){Add-AzADGroupMember -TargetGroupDisplayName $Group -MemberUserPrincipalName $item.UserPrincipalName;
 Write-Host "The user" $item.UserPrincipalName "GETS" $Group "Group permissions."}
 else{Write-Host "The user" $item.UserPrincipalName "gets NO" $Group "Group permissions."}
 }
