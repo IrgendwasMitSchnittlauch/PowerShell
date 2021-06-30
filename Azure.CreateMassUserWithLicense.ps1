@@ -1,4 +1,4 @@
-﻿<# 29.06.2021 (c) Schnittlauch Version 2.0
+<# 29.06.2021 (c) Schnittlauch Version 2.0
 
 Thanks to the official MS documentation
 
@@ -57,13 +57,13 @@ $License.SkuId = (Get-AzureADSubscribedSku | Where-Object -Property SkuPartNumbe
 $LicensesToAssign = New-Object -TypeName Microsoft.Open.AzureAD.Model.AssignedLicenses
 $LicensesToAssign.AddLicenses = $License
 Set-AzureADUserLicense -ObjectId $userUPN -AssignedLicenses $LicensesToAssign
-Write-host "for the user" $item.DisplayName "a License was assinged"
+Write-host "for the user" $item.DisplayName "a License was assinged" -BackgroundColor "Green" -ForegroundColor "Black"
 }
-else {write-host "for the user" $item.DisplayName "no License was requested"}
+else {write-host "for the user" $item.DisplayName "no License was requested" -BackgroundColor "Yellow" -ForegroundColor "Black"}
 
 if ($item.SupportGruppeYN -eq "y"){Add-AzADGroupMember -TargetGroupDisplayName $Group -MemberUserPrincipalName $item.UserPrincipalName;
-Write-Host "The user" $item.UserPrincipalName "GETS" $Group "Group permissions."}
-else{Write-Host "The user" $item.UserPrincipalName "gets NO" $Group "Group permissions."}
+Write-Host "The user" $item.UserPrincipalName "GETS" $Group "Group permissions." -BackgroundColor "Green" -ForegroundColor "Black"}
+else{Write-Host "The user" $item.UserPrincipalName "gets NO" $Group "Group permissions." -BackgroundColor "Yellow" -ForegroundColor "Black"}
 }
 
 
