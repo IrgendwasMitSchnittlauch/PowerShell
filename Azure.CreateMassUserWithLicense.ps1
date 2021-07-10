@@ -2,7 +2,7 @@
 
 Thanks to the official MS documentation
 
-With this Script you can create Azure AD Users with an E-Mail, License them and add them into Group-Mailboxes
+#With this Script you can create Azure AD Users with an E-Mail, License them and add them into Group-Mailboxes
 
 For this script you need:
 -A CSV file with the Columns of your DisplayName, UserPrincipalName, Password, MailNickName, Location, LicenseYN (License Yes No), (in my example the group is called:) SupportGruppeYN
@@ -41,10 +41,26 @@ $planName = "O365_BUSINESS_ESSENTIALS"
 #Define the Group, to which the user should get added eg. "support" | Attention that's not a mailing list, its a seperate Mailbox
 $Group = "Support"
 
+#For the Counter of failed Users Created
+$CounterOfFailedUsers = 0
 
 foreach ($item in $import) 
 {$secure = ConvertTo-SecureString -string $item.Password -AsPlainText -force; 
 New-AzADUser -DisplayName $item.DisplayName -UserPrincipalName $item.UserPrincipalName -Password $secure -MailNickname $item.MailNickName; 
+
+#Check if user has been created in Azure AD
+$CheckUPNinAzure =  Get-AzADUser -UserPrincipalName $item.UserPrincipalName | select UserPrincipalName
+
+If ($CheckUPNinAzure.UserPrincipalName -eq $item.UserPrincipalName){
+    Write-Host "The User" $item.UserPrincipalName "has been created successfull"-BackgroundColor "green" -ForegroundColor "Black"
+}
+Else
+{
+    write-host "Something went wrong. The User has NOT BEEN CREATED" -BackgroundColor "Red" -ForegroundColor "Black"
+    $item.UserPrincipalName | Out-File C:\Users\$env:UserName\Desktop\CreateMassUserFailedLog.txt -Append
+    $CounterOfFailedUsers = $CounterOfFailedUsers +1
+}
+
 if ($item.LicenseYN -eq "y")
 {
 $userUPN = $item.UserPrincipalName
@@ -61,11 +77,11 @@ Write-host "for the user" $item.DisplayName "a License was assinged" -Background
 }
 else {write-host "for the user" $item.DisplayName "no License was requested" -BackgroundColor "Yellow" -ForegroundColor "Black"}
 
-if ($item.SupportGruppeYN -eq "y"){Add-AzADGroupMember -TargetGroupDisplayName $Group -MemberUserPrincipalName $item.UserPrincipalName;
+if ($item.SupportGruppeYN -eq "y"){Add-AzADGroupMember -TargetGroupDisplayName $Group -MemberUserPrincipalName "$item.UserPrincipalName";
 Write-Host "The user" $item.UserPrincipalName "GETS" $Group "Group permissions." -BackgroundColor "Green" -ForegroundColor "Black"}
 else{Write-Host "The user" $item.UserPrincipalName "gets NO" $Group "Group permissions." -BackgroundColor "Yellow" -ForegroundColor "Black"}
 }
-
+if ($CounterOfFailedUsers -ne 0) {Write-Host "In total" $CounterOfFailedUsers "Users have not been created. Find out who here: C:\$env:UserName\Desktop\CreateMassUserFailedLog.txt" -BackgroundColor "Red" -ForegroundColor "Black"}
 
 
 <# If anyone cares here is how it should look like if you make your import:
