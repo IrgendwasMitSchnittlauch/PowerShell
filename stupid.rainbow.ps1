@@ -7,7 +7,7 @@ https://gist.github.com/timabell/cc9ca76964b59b2a54e91bda3665499e
 
 For this script you need:
 -PowerShell #>
-
+$colors = [enum]::GetValues([System.ConsoleColor])
 while (1 -ne 2){
     Foreach ($bgcolor in $colors){
         Foreach ($fgcolor in $colors) { Write-Host "$fgcolor|"  -ForegroundColor $fgcolor -BackgroundColor $bgcolor -NoNewLine }
