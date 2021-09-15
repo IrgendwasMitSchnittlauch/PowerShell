@@ -1,6 +1,6 @@
 <# 15.09.2021 (c) Schnittlauch Version 1.0
 Thanks to the official MS documentation
-You can use this script to get a LSD trip, I DO NOT RECOMMEND TO USE IT
+You can use this script to get a LSD trip, I DO NOT RECOMMEND TO USE IT :D
 
 Also thanks to gituser user B4Art
 https://gist.github.com/timabell/cc9ca76964b59b2a54e91bda3665499e
