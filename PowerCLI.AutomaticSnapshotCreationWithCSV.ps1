@@ -1,3 +1,6 @@
+#FYI doesn't matter, but in a few weeks I will maybe publish the same script as GUI. Made it already in my office, maybe I'll recode it here - we'll see
+
+
 #17.06.2021 (c) Schnittlauch Version 1.5
 
 #For this script you need:
