@@ -8,6 +8,7 @@
 # 11-10-14
 # Demo of WinForms FontDialog Class v2
 # Added display of selected Font and Style(s)
+# Found via https://adminscache.wordpress.com/2014/11/14/powershell-fontdialog-gui-v2/
 ###########################################################
 Add-Type -AssemblyName System.Windows.Forms
 
