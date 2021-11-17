@@ -13,7 +13,7 @@ get-service | select name, starttype, status | export-csv C:\Users\Florian\Deskt
 get-service | select name, starttype, status | export-csv C:\Users\Florian\Desktop\Powershell\Services\servicesafter.csv -Delimiter ';'
 
 #Compare
-Compare-Object (Get-Content "C:\Users\Florian\Desktop\Powershell\Services\servicesbefore.csv") (Get-Content "C:\Users\Florian\Desktop\Powershell\Services\servicesbefore.csv")
+Compare-Object (Get-Content "C:\Users\Florian\Desktop\Powershell\Services\servicesbefore.csv") (Get-Content "C:\Users\Florian\Desktop\Powershell\Services\servicesafter.csv")
 
 #Note: You will see each services twice. The upper services are the initial records, while the lower ones is the new record.
 
