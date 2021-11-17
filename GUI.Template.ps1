@@ -92,3 +92,10 @@ $LinkLabel.add_Click({[system.Diagnostics.Process]::start("calc.exe")})
 $GuiWindow.Topmost = $True
 $GuiWindow.Add_Shown({$GuiWindow.Activate()})
 [void] $GuiWindow.ShowDialog()
+
+
+
+<#
+Kinda nice flex: Pictures as "DecodeBase64Image" for more info follow here:
+https://github.com/kunaludapi/Powershell/blob/master/Powershell%20WPF%20encode%20decode%20Images/Show-DecodedImages.ps1
+#>
