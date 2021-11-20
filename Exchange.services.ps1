@@ -1,19 +1,30 @@
 <# 15.09.2021 (c) Schnittlauch Version 1.0
 Thanks to the official MS documentation
-You can use this script in case of having trouble with your Exchange. Sometimes after a CU update, even sometimes after a unsuccessfull update you can get into trouble.
+You can use this script in case of having trouble with your Exchange.
 
 For this script you need:
--PowerShell #>
+-PowerShell 
+
+An optional checklist:
+[] All Services that have been up, are still up?
+[] All Server componentstates are active?
+[] ECP/OWA reachable
+[] Possible to send mails?
+[] IIS okay?
+[] Suspicious tasks in taskmanager?
+[] Any monitoring alerts?
+[] Eventviewer provides more information?
+#>
 
 
 #Record Services before
-get-service | select name, starttype, status | export-csv C:\Users\Florian\Desktop\Powershell\Services\servicesbefore.csv -Delimiter ';'
+get-service | select name, starttype, status | export-csv C:\Users\$env:UserName\Desktop\Powershell\Services\servicesbefore.csv -Delimiter ';'
 
 #Record Services after
-get-service | select name, starttype, status | export-csv C:\Users\Florian\Desktop\Powershell\Services\servicesafter.csv -Delimiter ';'
+get-service | select name, starttype, status | export-csv C:\Users\$env:UserName\Desktop\Powershell\Services\servicesafter.csv -Delimiter ';'
 
 #Compare
-Compare-Object (Get-Content "C:\Users\Florian\Desktop\Powershell\Services\servicesbefore.csv") (Get-Content "C:\Users\Florian\Desktop\Powershell\Services\servicesafter.csv")
+Compare-Object (Get-Content "C:\Users\$env:UserName\Desktop\Powershell\Services\servicesbefore.csv") (Get-Content "C:\Users\$env:UserName\Desktop\Powershell\Services\servicesafter.csv")
 
 #Note: You will see each services twice. The upper services are the initial records, while the lower ones is the new record.
 
