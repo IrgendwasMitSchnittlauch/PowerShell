@@ -1,3 +1,12 @@
+###################################################
+# General.PCInfos.ps1                             #
+#                                                 #
+# published by Schnittlauch                       #
+# admin@schaffamuasch.onmicrosoft.com             #
+#                                                 #
+# 23th november 2021                              #
+###################################################
+
 clear-host
 
 $username = Get-CimInstance -ClassName Win32_ComputerSystem | select username
