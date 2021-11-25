@@ -166,7 +166,7 @@ function Get-Alcohol {
                         5 {$Shot = "Selbstgebrantes"}
                         6 {$Shot = "Obstler"}
                         7 {$Shot = "Prinz Obstbrände"}}
-                    write-host "$GrußformelShot $Shot $times $AsciShot"
+                    write-host "$GrußformelShot $Shot $times times $AsciShot"
                     }
         }
         $enter = Read-Host
