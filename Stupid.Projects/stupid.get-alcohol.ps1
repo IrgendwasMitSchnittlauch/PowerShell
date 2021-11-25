@@ -1,3 +1,12 @@
+###################################################
+# stupid.get-alcohol.ps1                          #
+#                                                 #
+# published by Schnittlauch                       #
+# admin@schaffamuasch.onmicrosoft.com             #
+#                                                 #
+# 25th november 2021                              #
+###################################################
+
 $AsciBeer ="
 CHEERS!
                                                                        
@@ -70,54 +79,7 @@ CHEERS!
 
 Press 'Enter' to get-alcohol
 "
-  
 
-
-<#
-Biere:
-Brauerei Gold Ochsen1/4
-	Orginal
-	Helles
-	Keller
-	Weihnachtsbier
-Augustiner 2
-	Edelstoff
-Kaiser3
-	Weihnachtsbier
-Pflug4
-	Bockbier
-Nattheimer5
-	Spezial
-Bräustüberl Tegernsee6
-	Hell
-	Spezial
-	Export Naturtrüb
-Berg Brauerei7
-	Weihnachtsbier
-	Ulrichsbier
-
-
-Mischen:
-Vodka
-Rum
-Whiskey
-Bacardi
-Amaretto
-
-Energy
-Cola
-Orange
-Sprite
-Fanta
-
-Shots:
-
-Tequilla
-Ficken
-Saurer Joster
-Berliner Luft
-Pfeffi
-#>
 $GrußformelBier = "My todays recommendation is"
 $GrußformelMische = "I would recommend a mixture of"
 $GrußformelShot = "Let's shot"
@@ -212,3 +174,50 @@ function Get-Alcohol {
     }
 
 Get-Alcohol
+
+
+<#
+Biere:
+Brauerei Gold Ochsen1/4
+	Orginal
+	Helles
+	Keller
+	Weihnachtsbier
+Augustiner 2
+	Edelstoff
+Kaiser3
+	Weihnachtsbier
+Pflug4
+	Bockbier
+Nattheimer5
+	Spezial
+Bräustüberl Tegernsee6
+	Hell
+	Spezial
+	Export Naturtrüb
+Berg Brauerei7
+	Weihnachtsbier
+	Ulrichsbier
+
+
+Mischen:
+Vodka
+Rum
+Whiskey
+Bacardi
+Amaretto
+
+Energy
+Cola
+Orange
+Sprite
+Fanta
+
+Shots:
+
+Tequilla
+Ficken
+Saurer Joster
+Berliner Luft
+Pfeffi
+#>
