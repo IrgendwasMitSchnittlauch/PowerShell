@@ -1,5 +1,5 @@
 ﻿###################################################
-# stupid.decrypter.ps1                            #
+# General.decrypter.ps1                           #
 #                                                 #
 # published by Schnittlauch                       #
 # admin@schaffamuasch.onmicrosoft.com             #
