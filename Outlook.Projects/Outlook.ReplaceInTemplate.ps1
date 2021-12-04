@@ -1,4 +1,13 @@
-﻿#Change these values:
+###################################################
+# Outlook.ReplaceInTemplate.ps1                   #
+#                                                 #
+# published by Schnittlauch                       #
+# admin@schaffamuasch.onmicrosoft.com             #
+#                                                 #
+# 04th december 2021                              #
+###################################################
+ 
+#Change these values:
 $workdir = "C:\users\$env:UserName\downloads\"
 $mailtemplate01 = "mail.txt"
 $Subject = "This is a subject"
