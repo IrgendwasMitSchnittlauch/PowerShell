@@ -1,5 +1,5 @@
 ﻿###################################################
-# stupid.encrypter.ps1                            #
+# General.encrypter.ps1                           #
 #                                                 #
 # published by Schnittlauch                       #
 # admin@schaffamuasch.onmicrosoft.com             #
