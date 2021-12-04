@@ -1,6 +1,6 @@
 ﻿#Change these values:
 $workdir = "C:\users\$env:UserName\downloads\"
-$email01 = "mail.txt"
+$mailtemplate01 = "mail.txt"
 $Subject = "This is a subject"
 $BCC = "John.Doe@microsoft.com"
 
@@ -13,7 +13,7 @@ $ol = New-Object -comObject Outlook.Application
 $mail = $ol.CreateItem(0)
 
 #Change mail text:
-$template = get-content "$workdir$email01"
+$template = get-content "$workdir$mailtemplate01"
 $template.replace($TextInMail,$TextReplaced)
 
 #mail propertys
