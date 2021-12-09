@@ -45,4 +45,7 @@ foreach ($CP in $SCP)
 Set-ServerComponentState -Identity $env:COMPUTERNAME -Component $CP -Requester maintenance -State Active
 }
 
+write-host "I'm done so far. Maybe checkout the healthchecker script
+https://microsoft.github.io/CSS-Exchange/Diagnostics/HealthChecker/"
+
 #That's it so far. // I will keep adding some lines.
