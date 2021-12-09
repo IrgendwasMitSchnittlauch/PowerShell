@@ -3,7 +3,7 @@ Thanks to the official MS documentation
 You can use this script in case of having trouble with your Exchange.
 
 For this script you need:
--PowerShell 
+-The Exchange Management Shell 
 
 An optional checklist:
 [] All Services that have been up, are still up?
