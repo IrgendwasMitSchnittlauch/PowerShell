@@ -25,7 +25,7 @@ $Form.ControlBox = $true
 $Form.StartPosition = "CenterScreen"
 $Form.Font = "Comic Sans MS,10"                                                 #Other Fonts -> See also in "GUI.FontDialog2.ps1"
 $Form.ForeColor = "White"
-$Form.BackColor = "Black"
+$Form.BackColor = "Gray"
 
 ###############################################################################
 
@@ -60,16 +60,15 @@ $ComboBox = New-Object System.Windows.Forms.Combobox                            
 $ComboBox.Location = New-Object System.Drawing.Size(10,80)
 $ComboBox.Size = New-Object System.Drawing.Size(280,20)
 $ComboBox.Height = 70
-$forms.Controls.Add($ComboBox)
-$ComboBox.Topmost = $True
 $ComboBox.Add_SelectedIndexChanged({ })
+$Form.Controls.Add($ComboBox)
 
 #Button                                                                         #Buttons
 $Button = New-Object System.Windows.Forms.Button
 $Button.Location = New-Object System.Drawing.Size(10,100)
 $Button.Size = New-Object System.Drawing.Size(280,20)
 $Button.Text = "Im a Button lmao"
-$forms.Controls.Add($Button)
+$Form.Controls.Add($Button)
 <# 
 Action                                                                          #Buttons Action
 $Button.Add_Click({
@@ -89,9 +88,8 @@ $LinkLabel.add_Click({[system.Diagnostics.Process]::start("calc.exe")})
 
 
 #Start/Display the GUI Window                                                   #Starting GUI
-$GuiWindow.Topmost = $True
-$GuiWindow.Add_Shown({$GuiWindow.Activate()})
-[void] $GuiWindow.ShowDialog()
+$Form.Add_Shown({$GuiWindow.Activate()})
+[void] $Form.ShowDialog()
 
 
 
