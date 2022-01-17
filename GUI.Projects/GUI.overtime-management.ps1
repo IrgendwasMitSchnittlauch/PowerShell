@@ -10,6 +10,13 @@
 for the clock.
 #>
 
+<#HOW TO USE THIS OVERTIME MANAGEMENT:
+Step0: Personalize the $Path to a folder, where the log files should be saved.
+Step1: Once this is done, you can now enter a Username into the textfield and "load" it.
+Step2: You'll be asked if you want to create this profile.
+Step3: Click yes to create this profile. After that you'll need to click "Clear and initialize profile". Confirm.
+Step4: Now use it however you want.
+#>
 
 $Path = "C:\Users\$env:username\Desktop\Zeitmanagement\"
 
