@@ -1,4 +1,4 @@
-﻿###################################################
+###################################################
 # overtime-management.ps1                         #
 #                                                 #
 # published by Schnittlauch                       #
@@ -10,13 +10,6 @@
 for the clock.
 #>
 
-<#HOW TO USE THIS OVERTIME MANAGEMENT:
-Step0: Personalize the $Path to a folder, where the log files should be saved.
-Step1: Once this is done, you can now enter a Username into the textfield and "load" it.
-Step2: You'll be asked if you want to create this profile.
-Step3: Click yes to create this profile. After that you'll need to click "Clear and initialize profile". Confirm.
-Step4: Now use it however you want.
-#>
 
 $Path = "C:\Users\$env:username\Desktop\Zeitmanagement\"
 
@@ -59,7 +52,8 @@ $form.Controls.Add($Button04)
 
 #Clock
 $clockLbl = New-Object 'System.Windows.Forms.Label'
-$clockLbl.Text = (Get-Date).ToString("HH:mm:ss:ff")
+$clockLbl.Text = (Get-Date).ToString("HH:mm:ss")
+#$clockLbl.Text = (Get-Date).ToString("HH:mm:ss:ff")
 $clockLbl.AutoSize = $True
 $clockLbl.ForeColor = "#00afff"
 $clockLbl.Location = New-Object System.Drawing.Point(0,0)
@@ -68,7 +62,8 @@ $Form.Controls.Add($clockLbl)
 
 $timer1 = New-Object 'System.Windows.Forms.Timer'
 $timer1_Tick={
-    $clockLbl.Text = (Get-Date).ToString("HH:mm:ss:ff")
+    $clockLbl.Text = (Get-Date).ToString("HH:mm:ss")
+    #$clockLbl.Text = (Get-Date).ToString("HH:mm:ss:ff")
 }
 
 $timer1.Enabled = $True
@@ -221,6 +216,7 @@ $Button06.Add_Click({
     }
     #change format
     $resultminutes= ($work | select totalminutes).totalminutes
+    $resultminutes = [math]::Round($resultminutes, 0)
     
     #Update the Label
     $label08.Text ="In total you have:
